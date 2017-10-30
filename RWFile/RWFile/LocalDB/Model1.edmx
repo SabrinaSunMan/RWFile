@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Database1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BIN_REACHED">
+          <Key>
+            <PropertyRef Name="Bin_Reached_ID" />
+          </Key>
+          <Property Name="Bin_Reached_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="X" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Y" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="DUT" Type="int" Nullable="false" />
+          <Property Name="Result" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="bin1" Type="int" Nullable="false" />
+          <Property Name="bin2" Type="int" Nullable="false" />
+          <Property Name="FK_WT_ID" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Deg_c">
+          <Key>
+            <PropertyRef Name="DegC_ID" />
+          </Key>
+          <Property Name="DegC_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="degC" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="FK_WT_ID" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Power">
+          <Key>
+            <PropertyRef Name="Power_ID" />
+          </Key>
+          <Property Name="Power_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Pin_name" Type="varchar" MaxLength="15" />
+          <Property Name="mA" Type="varchar" MaxLength="30" />
+          <Property Name="FK_WT_ID" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="WT">
+          <Key>
+            <PropertyRef Name="WT_ID" />
+          </Key>
+          <Property Name="WT_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SDate" Type="datetime" />
+          <Property Name="EDate" Type="datetime" />
+          <Property Name="CreateTime " Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="Database1ModelStoreContainer">
+          <EntitySet Name="BIN_REACHED" EntityType="Self.BIN_REACHED" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Deg_c" EntityType="Self.Deg_c" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Power" EntityType="Self.Power" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WT" EntityType="Self.WT" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Database1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BIN_REACHED">
+          <Key>
+            <PropertyRef Name="Bin_Reached_ID" />
+          </Key>
+          <Property Name="Bin_Reached_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="X" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Y" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="DUT" Type="Int32" Nullable="false" />
+          <Property Name="Result" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bin1" Type="Int32" Nullable="false" />
+          <Property Name="bin2" Type="Int32" Nullable="false" />
+          <Property Name="FK_WT_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Deg_c">
+          <Key>
+            <PropertyRef Name="DegC_ID" />
+          </Key>
+          <Property Name="DegC_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="degC" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="FK_WT_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Power">
+          <Key>
+            <PropertyRef Name="Power_ID" />
+          </Key>
+          <Property Name="Power_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Pin_name" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="mA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FK_WT_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="WT">
+          <Key>
+            <PropertyRef Name="WT_ID" />
+          </Key>
+          <Property Name="WT_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SDate" Type="DateTime" Precision="3" />
+          <Property Name="EDate" Type="DateTime" Precision="3" />
+          <Property Name="CreateTime_" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="Database1Entities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BIN_REACHED" EntityType="Self.BIN_REACHED" />
+          <EntitySet Name="Deg_c" EntityType="Self.Deg_c" />
+          <EntitySet Name="Power" EntityType="Self.Power" />
+          <EntitySet Name="WT" EntityType="Self.WT" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities1">
+          <EntitySetMapping Name="BIN_REACHED">
+            <EntityTypeMapping TypeName="Database1Model.BIN_REACHED">
+              <MappingFragment StoreEntitySet="BIN_REACHED">
+                <ScalarProperty Name="Bin_Reached_ID" ColumnName="Bin_Reached_ID" />
+                <ScalarProperty Name="X" ColumnName="X" />
+                <ScalarProperty Name="Y" ColumnName="Y" />
+                <ScalarProperty Name="DUT" ColumnName="DUT" />
+                <ScalarProperty Name="Result" ColumnName="Result" />
+                <ScalarProperty Name="bin1" ColumnName="bin1" />
+                <ScalarProperty Name="bin2" ColumnName="bin2" />
+                <ScalarProperty Name="FK_WT_ID" ColumnName="FK_WT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Deg_c">
+            <EntityTypeMapping TypeName="Database1Model.Deg_c">
+              <MappingFragment StoreEntitySet="Deg_c">
+                <ScalarProperty Name="DegC_ID" ColumnName="DegC_ID" />
+                <ScalarProperty Name="degC" ColumnName="degC" />
+                <ScalarProperty Name="FK_WT_ID" ColumnName="FK_WT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Power">
+            <EntityTypeMapping TypeName="Database1Model.Power">
+              <MappingFragment StoreEntitySet="Power">
+                <ScalarProperty Name="Power_ID" ColumnName="Power_ID" />
+                <ScalarProperty Name="Pin_name" ColumnName="Pin_name" />
+                <ScalarProperty Name="mA" ColumnName="mA" />
+                <ScalarProperty Name="FK_WT_ID" ColumnName="FK_WT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WT">
+            <EntityTypeMapping TypeName="Database1Model.WT">
+              <MappingFragment StoreEntitySet="WT">
+                <ScalarProperty Name="WT_ID" ColumnName="WT_ID" />
+                <ScalarProperty Name="SDate" ColumnName="SDate" />
+                <ScalarProperty Name="EDate" ColumnName="EDate" />
+                <ScalarProperty Name="CreateTime_" ColumnName="CreateTime " />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
